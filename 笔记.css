@@ -1,0 +1,47 @@
+1，margin: 0 auto 
+只能让标准的盒子居中表示，必须得是块元素，而且有宽度（加了浮动的就不行）
+
+加了定位的盒子想要居中对齐的方法：
+向左父盒子的一半，再向右自己盒子的一半
+left：50%;
+margin-left: -55px;/*自己的一半*/
+2，绝对定位：子盒子是绝对定位，父盒子必须得是相对定位
+父盒子：position: relative;
+子盒子：position: absolute;
+3,保证背景图片在最中央--水平居中 垂直居上
+background:url(../img/banner.png)  no-repeat top center #BCDB35;
+4,css3背景透明的设置,不影响盒子的内容：
+background:rgba(0,0,0,.3);
+5,圆角的设置：border-radius:15px; /*圆角半径*/
+6,display: inline;
+  float: left;
+7,清除浮动的方法：
+(1)在最后添加一个盒子
+<div class="clear"></div>
+.clear{clear: both;}
+(2)给父盒子添加 .father{ overflow: hidden;}
+(3)网上流行的写法(利用伪类来清除浮动)：
+.clearfix:after{
+	content: '';
+	display:block;
+	height: 0;
+	visibility: hidden;
+	clear: both;
+}
+.clearfix{
+	zoom:1;/*为了支持ie6*/
+}
+<div class="father clearfix">
+</div>
+(4)伪类方法2
+.clearfix:before ,clearfix:after {
+	display:table;
+	content: '';
+	line-height: 0;
+}
+.clearfix :after {
+	clear: both;	
+}
+.clearfix{
+	zoom:1;
+}

@@ -1,0 +1,53 @@
+@charset "utf-8";
+.banner{
+	width: 100%;
+	height: 520px;
+	/*top center 保证背景图片在最中央--水平居中 垂直居上*/
+	/*background:url(../img/banner.png)  no-repeat top center #BCDB35;*/
+	position: relative;
+	overflow: hidden;
+}
+.cilcle{
+	width:100px;
+	height:28px;
+	padding-left: 11px;
+	background-color: blue;
+	/*子盒子绝对定位，父亲盒子相对定位*/
+	position: absolute;
+	bottom: 12px; 
+	/*这是居中的处理方法:向左父盒子的一半，再向右自己盒子的一半*/
+	left:50%;
+	margin-left: -55px; 
+	background:rgba(0,0,0,.3);/*透明背景设置*/
+	border-radius:15px; 
+}
+.cilcle li{
+	float: left;
+	font-size: 25px;
+	color:#CCC;
+	line-height: 30px;
+	margin:0 2px; 
+	cursor:text;/*输入箭头*/
+	cursor:pointer;/*小手*/
+	cursor:default;/*小白*/
+}
+.cilcle .current{
+	color:white;
+}
+.scroll{
+	width:300%;
+	height:520px;
+	/*做动画的部分绝对定位*/
+	position:absolute;
+}
+.scroll li{
+	float:left;
+	height:520px;
+	background:url(../img/1.jpg)  no-repeat top center;
+}
+.scroll li:nth-child(2){
+	background:  url(../img/2.jpg) no-repeat top center;
+}
+.scroll li:nth-child(3){
+	background:  url(../img/3.jpg) no-repeat top center;
+}

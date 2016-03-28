@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>练习</title>
+	<!-- title上的小图标 -->
+	<link rel="shortcut icon" href="favicon.ico">
+	<link rel="stylesheet" type="text/css" href="css/cssRest.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript" src="js/jquery-1.12.2.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			 $(".scroll li").width($(window).width());
+			 $(".cilcle li").click(function(event) {
+			 	/* Act on the event */
+			 	$('.scroll').stop().animate({
+			 		"left": -$(this).index()*$('.scroll li').width()},
+			 		1000);
+			 	$(this).addClass('current').siblings().removeClass('current');
+			 });
+		});
+	</script>
+</head>
+<body> 
+	<div class="banner">
+		<ul class="scroll">
+			<li></li>
+			<li ></li>
+			<li></li>
+		</ul>
+		<!-- 上面的三个小圆点用css3做 -->
+		<ol class="cilcle">
+			<li class="current">●</li>
+			<li>●</li>
+			<li>●</li>
+		</ol>
+	</div>
+</body>
+</html>
